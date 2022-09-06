@@ -60,6 +60,7 @@ describe('Binary Tree Practice', () => {
     bstRootUnbalanced.right.right.right.right.right = new TreeNode(6);
     bstRootUnbalanced.right.right.right.right.right.right = new TreeNode(7);
   });
+  
 
   // Initialize Binary Trees
   beforeEach(function () {
@@ -230,10 +231,10 @@ describe('Binary Tree Practice', () => {
   describe('getParentNode', () => {
 
     it('returns the parent node of the node with a given value', function() {
-      expect(getParentNode(bstRoot, 1).val).to.equal(2);
-      expect(getParentNode(bstRootUnbalanced, 6).val).to.equal(5);
-      expect(getParentNode(btRoot, 6).val).to.equal(3);
-      expect(getParentNode(btRootUnbalanced, 7).val).to.equal(1);
+      expect(getParentNode(bstRoot, 1).value).to.equal(2);
+      expect(getParentNode(bstRootUnbalanced, 6).value).to.equal(5);
+      expect(getParentNode(btRoot, 6).value).to.equal(3);
+      expect(getParentNode(btRootUnbalanced, 7).value).to.equal(1);
 
     });
 
@@ -287,35 +288,35 @@ describe('Binary Tree Practice', () => {
 
       deleteNodeBST(bstRoot, 1);
       deleteNodeBST(bstRoot, 2);
-      expect(bstRoot.left.val).to.equal(3);
+      expect(bstRoot.left.value).to.equal(3);
       expect(bstRoot.left.left).to.equal(null);
       expect(bstRoot.left.right).to.equal(null);
 
       deleteNodeBST(bstRoot, 5);
       deleteNodeBST(bstRoot, 6);
-      expect(bstRoot.right.val).to.equal(7);
+      expect(bstRoot.right.value).to.equal(7);
       expect(bstRoot.right.left).to.equal(null);
       expect(bstRoot.right.right).to.equal(null);
 
       deleteNodeBST(bstRootUnbalanced, 3);
-      expect(bstRootUnbalanced.right.right.val).to.equal(4);
-      expect(bstRootUnbalanced.right.right.right.val).to.equal(5);
-      expect(bstRootUnbalanced.right.right.right.right.val).to.equal(6);
-      expect(bstRootUnbalanced.right.right.right.right.right.val).to.equal(7);
+      expect(bstRootUnbalanced.right.right.value).to.equal(4);
+      expect(bstRootUnbalanced.right.right.right.value).to.equal(5);
+      expect(bstRootUnbalanced.right.right.right.right.value).to.equal(6);
+      expect(bstRootUnbalanced.right.right.right.right.right.value).to.equal(7);
 
     });
 
     it('correctly deletes a node with two children, replacing with the in-order predecessor', function() {
 
       deleteNodeBST(bstRoot, 6);
-      expect(bstRoot.right.val).to.equal(5);
+      expect(bstRoot.right.value).to.equal(5);
       expect(bstRoot.right.left).to.equal(null);
-      expect(bstRoot.right.right.val).to.equal(7);
+      expect(bstRoot.right.right.value).to.equal(7);
 
       deleteNodeBST(bstRoot, 4);
-      expect(bstRoot.val).to.equal(3);
-      expect(bstRoot.left.val).to.equal(2);
-      expect(bstRoot.left.left.val).to.equal(1);
+      expect(bstRoot.value).to.equal(3);
+      expect(bstRoot.left.value).to.equal(2);
+      expect(bstRoot.left.left.value).to.equal(1);
       expect(bstRoot.left.right).to.equal(null);
 
     });
